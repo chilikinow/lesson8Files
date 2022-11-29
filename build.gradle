@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+}
+
+group 'com.chilikinow'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+
+    implementation (
+            'org.slf4j:slf4j-simple:1.7.25'
+//            'javax.xml.bind:jaxb-api:2.3.1'
+//            ,'io.rest-assured:rest-assured:5.1.1'
+//            ,"io.rest-assured:rest-assured-common:5.0.1"
+//            ,"io.rest-assured:json-path:5.0.1"
+//            ,"io.rest-assured:xml-path:5.0.1"
+//            ,"com.google.code.gson:gson:2.2.4"
+    )
+
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    testImplementation(
+            'io.rest-assured:rest-assured:5.1.1'
+            ,'io.rest-assured:rest-assured-common:5.0.1'
+            ,'io.rest-assured:json-path:5.0.1'
+            ,'io.rest-assured:xml-path:5.0.1'
+            ,'org.junit.jupiter:junit-jupiter:5.8.2'
+            ,'org.assertj:assertj-core:3.11.1'
+            ,'com.codeborne:selenide:6.6.6'
+            ,'org.slf4j:slf4j-simple:1.7.25'
+            ,'com.github.javafaker:javafaker:1.0.2'
+    )
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+}
+
+sourceSets {
+    main.java.srcDir 'src/main/java'
+    main.resources.srcDir 'src/main/resources'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
