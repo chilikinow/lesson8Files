@@ -29,15 +29,15 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
     testImplementation(
-            'io.rest-assured:rest-assured:5.1.1'
-            ,'io.rest-assured:rest-assured-common:5.0.1'
-            ,'io.rest-assured:json-path:5.0.1'
-            ,'io.rest-assured:xml-path:5.0.1'
-            ,'org.junit.jupiter:junit-jupiter:5.8.2'
+            'org.junit.jupiter:junit-jupiter:5.8.2'
             ,'org.assertj:assertj-core:3.11.1'
             ,'com.codeborne:selenide:6.6.6'
             ,'org.slf4j:slf4j-simple:1.7.25'
-            ,'com.github.javafaker:javafaker:1.0.2'
+            ,'com.codeborne:pdf-test:1.5.0'
+            ,'com.codeborne:xls-test:1.4.3'
+            ,'com.opencsv:opencsv:5.7.1'
+            ,'commons-io:commons-io:2.6'
+            ,'com.fasterxml.jackson.core:jackson-databind:2.14.1'
     )
 
     testCompileOnly 'org.projectlombok:lombok:1.18.24'
