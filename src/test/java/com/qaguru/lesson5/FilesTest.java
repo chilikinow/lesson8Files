@@ -5,8 +5,12 @@ import com.codeborne.xlstest.XLS;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.opencsv.CSVReader;
 import com.qaguru.lesson5.services.model.Samples;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -25,11 +29,10 @@ public class FilesTest {
 
     private ClassLoader classLoader = FilesTest.class.getClassLoader();
 
-    @BeforeAll
-    static void beforeAll() {
-    }
-
     @Test
+    @DisplayName("xls extract archive")
+    @Owner("chilikinow@gmail.com")
+    @Severity(SeverityLevel.NORMAL)
     void xlsExtractArchiveTest() throws Exception {
 
         try (InputStream resource = classLoader.getResourceAsStream("sample.zip");
@@ -56,6 +59,9 @@ public class FilesTest {
     }
 
     @Test
+    @DisplayName("pdf extract archive")
+    @Owner("chilikinow@gmail.com")
+    @Severity(SeverityLevel.NORMAL)
     void pdfExtractArchiveTest() throws Exception {
 
         try (InputStream resource = classLoader.getResourceAsStream("sample.zip");
@@ -81,6 +87,9 @@ public class FilesTest {
     }
 
     @Test
+    @DisplayName("cvs extract archive")
+    @Owner("chilikinow@gmail.com")
+    @Severity(SeverityLevel.NORMAL)
     void csvExtractArchiveTest() throws Exception {
 
         try (InputStream resource = classLoader.getResourceAsStream("sample.zip");
@@ -120,6 +129,9 @@ public class FilesTest {
     }
 
     @Test
+    @DisplayName("json parse")
+    @Owner("chilikinow@gmail.com")
+    @Severity(SeverityLevel.NORMAL)
     void jsonParseTest() throws Exception {
 
         File fileJson = new File(classLoader.getResource("sampleJSON.json").getPath());
